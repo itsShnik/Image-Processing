@@ -1,0 +1,52 @@
+*Documentation for Day 0*
+-> Basics of an image
+	+ RGB image:
+		_ A 3 chanel (R, G, B) 2D array consisting of integer values of each colour ranging from 0 to 255, with 255 meaning max intensity, and 0 meaning minimum intensity for that particular collour.
+	+ GrayScale image:
+		_One chanel 2D array consisting of integer values ranging from 0 to 255, with 255 meaning brightest image (white) and 0 indicating a bkack colour at that pixel. 
+
+-> Opencv basics in c++
+	+ Header files to include
+		_#include "opencv2/highgui/highgui.hpp"
+		_#include "opencv2/imgproc/imgproc.hpp"
+
+	+ Creating an image in opencv c++
+		_BGR: Mat img(rows, cols, CV_8UC3, Scalar(0)); //3 in CV_8UC3 meaning 3 chanels
+		_GrayScale: Mat chessboard(rows, cols, CV_8UC1, Scalar(0)); //1 in CV_8UC1 meaning 1 chanel
+
+	+ Reading an image from a file:
+		_ Mat img = imread("filename", <flag>);
+
+		   [
+			    CV_LOAD_IMAGE_ANYDEPTH - If set, return 16-bit/32-bit image when the input has the corresponding depth, otherwise convert it to 8-bit.
+			    CV_LOAD_IMAGE_COLOR - If set, always convert image to the color one
+			    CV_LOAD_IMAGE_GRAYSCALE - If set, always convert image to the grayscale one
+
+			    >0 Return a 3-channel color image.
+
+			        Note
+
+			        In the current implementation the alpha channel, if any, is stripped from the output image. Use negative value if you need the alpha channel.
+
+			    =0 Return a grayscale image.
+			    <0 Return the loaded image as is (with alpha channel).
+		    ]
+	+Showing an output image:
+		_window : image will open in it
+			[ namedWindow("winName", WINDOW_NORMAL)]
+		_showing image: image that will be shown
+			[ imshow("winName", img) ]
+		_waitKey : gives the time in milisecond for which image will be shown, but waitKey(0) will keep image open for infinite time
+
+	+Accesing any pixel from the image
+		_BGR : img.at<Vec3b>(i , j)[n] //n = 0 gives B intensity at that pixel, n = 1 gives G intensity and n = 2 gives R intensity
+		_Grayscale : img.at<uchar>(i , j) // no n is required because there is only one channel
+		[ 'i' is the no. of row, and j is the no. of coloumn of that pixel]
+
+	+No. of rows and cols:
+		_rows = img.rows;
+		_cols = img.cols;
+
+-> Tasks given:
+	+making a red green image
+	+making a chessboard
