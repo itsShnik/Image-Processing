@@ -1,0 +1,12 @@
+//Made some logical functions using opencv in c++ that might come in handy in future
+
+->Making mirror image of the given image
+	+Logic : just like swapping of integers, store one half of the image in temp image, substitute second half in place of the first half, substitute the temp image half in place of the second half of the image
+
+->Converting the BGR image into grayscale image:
+	+ Why?
+		_No. of operations required reduce to 3 times, that's why we always prefer to convert the BGR image into grayscale image.
+	+ How?
+		_Mean transformation: grayscale pixel value = (R + G + B) / 3;
+		_maxMin transformation: grayscale pixel value = ( min{R, G, B} + max{R, G ,B} )/2
+		_gaussian transformation: grayscale pixel value = .07B + .72G + .21R
