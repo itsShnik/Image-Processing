@@ -36,7 +36,7 @@ void update_fun(int t, void* )
     {
         for (int j=0; j<cols; j++)
         {
-            if ((img.at<Vec3b>(i, j)[0] > Bl) && (img.at<Vec3b>(i, j)[0] < Bh) && (img.at<Vec3b>(i, j)[1] > Gl) && (img.at<Vec3b>(i, j)[1] < Gh) && (img.at<Vec3b>(i, j)[2] > Rl) && (img.at<Vec3b>(i, j)[2] < Rh))
+            if ((img.at<Vec3b>(i, j)[0] >= Bl) && (img.at<Vec3b>(i, j)[0] <= Bh) && (img.at<Vec3b>(i, j)[1] >= Gl) && (img.at<Vec3b>(i, j)[1] <= Gh) && (img.at<Vec3b>(i, j)[2] >= Rl) && (img.at<Vec3b>(i, j)[2] <=Rh))
             {
                 imgnew.at<uchar>(i, j) = 0;
             }
@@ -50,7 +50,7 @@ void update_fun(int t, void* )
 
 int main()
 {
-    img = imread("FruitBasket.jpg", 1);
+    img = imread("1.jpg", 1);
     rows = img.rows;
     cols = img.cols;
 

@@ -10,3 +10,8 @@
 		_Mean transformation: grayscale pixel value = (R + G + B) / 3;
 		_maxMin transformation: grayscale pixel value = ( min{R, G, B} + max{R, G ,B} )/2
 		_gaussian transformation: grayscale pixel value = .07B + .72G + .21R
+
+->Binary image and thresholding:
+	+Binary image is an image made of 2 colours, black(0) and white(255)
+	+Thresholding:
+		_

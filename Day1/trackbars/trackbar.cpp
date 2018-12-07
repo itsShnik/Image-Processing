@@ -10,7 +10,7 @@ Mat img_gauss;
 void update_fun(int t, void* )
 {
 
-    Mat img = imread("Lena.jpg", 1);
+    Mat img = imread("images.jpg", 1);
 
     int rows = img.rows;
     int cols = img.cols;
